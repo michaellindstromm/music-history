@@ -101,3 +101,20 @@ input[type=range]::-ms-track {
   border-color: transparent;
   color: transparent;
 }
+
+.songInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.songInfo h2 {
+  font-size: 2em;
+  font-weight: normal;
+  color: #785616;
+}
+
+.song {
+  margin-left: 2em;
+}
