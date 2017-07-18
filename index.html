@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Music History</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header> <!-- Navigation -->
+      <nav>
+        <ul>
+          <li><a href="index.html">View Music</a></li> |
+          <li><a href="addmusic.html">Add Music</a></li> |
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="songSelection"> <!-- Song Criteria -->
+      <form class="" action="index.html" method="post">
+        <fieldset>
+          <label for="songLength">Song Length:</label> <br>
+          <input type="range" name="songLength" value="50"> <br>
+        </fieldset>
+
+        <fieldset>
+          <label for="artist">Artist:</label> <br>
+          <select class="artistOptions" name="artist"> <br>
+            <option selected disabled>Options</option> <br>
+          </select> <br>
+
+          <label for="album">Album:</label> <br>
+          <select class="albumOptions" name="album"> <br>
+            <option selected disabled>Options</option> <br>
+          </select> <br>
+        </fieldset>
+
+        <fieldset>
+          <label for="genre">Genre:</label>
+          <input type="radio" name="genre" value=""> Rock
+          <input type="radio" name="genre" value=""> Pop
+          <input type="radio" name="genre" value=""> Blues
+
+          <input type="radio" name="genre" value=""> Classical
+          <input type="radio" name="genre" value=""> Jazz
+          <input type="radio" name="genre" value=""> Hip Hop
+        </fieldset>
+
+        <button type="button" name="button">Filter</button>
+
+      </form>
+
+    </div>
+    <div class="songInfo">
+
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
+
+
+<!-- Options holders. I feel like javascript is about to populate this.
+
+
+<option value="beatles">The Beatles</option>
+<option value="michael">Michael Jackson</option>
+<option value="queen">Queen</option>
+<option value="eminem">Eminem</option>
+<option value="floyd">Pink Floyd</option>
+<option value="nirvana">Nirvana</option>
+<option value="chuck">Chuck Berry</option>
+<option value="zepp">Led Zepplin</option>
+<option value="elvis">Elvis Presley</option>
+<option value="madonna">Madonna</option> -->

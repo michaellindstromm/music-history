@@ -1,0 +1,103 @@
+/*Red = #FFB4B0
+Blue = #4DD7FA
+Light yellow = #FEFAC0
+Dark yellow = #785616*/
+
+body {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas:
+  "header header header header header header header header header header"
+  "selection selection selection info info info info info info info";
+  grid-gap: 1em;
+  width: 90%;
+  margin: 1em auto;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  grid-area: header;
+  border: 2px solid black;
+  background: #FFB4B0;
+  align-items: center;
+}
+
+.songSelection {
+  grid-area: selection;
+  display: flex;
+  border: 2px solid black;
+  background: #4DD7FA;
+}
+
+.songInfo {
+  grid-area: info;
+  display: flex;
+  border: 2px solid black;
+  background: #FEFAC0;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 1em;
+  list-style-type: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: blue;
+}
+
+nav ul li a:hover{
+  text-decoration: none;
+  color: blue;
+}
+
+nav ul li a:visited {
+  text-decoration: none;
+  color: blue;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+form fieldset {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin-top: 1em;
+  /*border: none;*/
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
