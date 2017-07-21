@@ -6,54 +6,83 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header> <!-- Navigation -->
-      <nav>
-        <ul>
-          <li><a href="index.html">View Music</a></li> |
-          <li><a href="addmusic.html">Add Music</a></li> |
-          <li><a href="profile.html">Profile</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div class="songSelection"> <!-- Song Criteria -->
-      <form class="" action="index.html" method="post">
-        <fieldset>
-          <label for="songLength">Song Length:</label> <br>
-          <input type="range" name="songLength" value="50"> <br>
-        </fieldset>
+    <section id="topArea">
+      <header id="header"> <!-- Navigation -->
+        <nav>
+          <ul>
+            <li><a href="#" id="link-home">View Music</a></li> |
+            <li><a href="#" id="link-add">Add Music</a></li> |
+            <li><a href="#">Profile</a></li>
+          </ul>
+        </nav>
+      </header>
+    </section>
 
-        <fieldset>
-          <label for="artist">Artist:</label> <br>
-          <select class="artistOptions" name="artist"> <br>
-            <option selected disabled>Options</option> <br>
-          </select> <br>
+    <section id="home-view">
+      <div id="indexBody">
+        <div class="songSelection"> <!-- Song Criteria -->
+          <form class="" action="index.html" method="post">
+            <fieldset>
+              <label for="songLength">Song Length:</label> <br>
+              <input type="range" name="songLength" value="50"> <br>
+            </fieldset>
 
-          <label for="album">Album:</label> <br>
-          <select class="albumOptions" name="album"> <br>
-            <option selected disabled>Options</option> <br>
-          </select> <br>
-        </fieldset>
+            <fieldset>
+              <label for="artist">Artist:</label> <br>
+              <select class="artistOptions" name="artist"> <br>
+                <option selected disabled>Options</option> <br>
+              </select> <br>
 
-        <fieldset>
-          <label for="genre">Genre:</label>
-          <input type="radio" name="genre" value=""> Rock
-          <input type="radio" name="genre" value=""> Pop
-          <input type="radio" name="genre" value=""> Blues
+              <label for="album">Album:</label> <br>
+              <select class="albumOptions" name="album"> <br>
+                <option selected disabled>Options</option> <br>
+              </select> <br>
+            </fieldset>
 
-          <input type="radio" name="genre" value=""> Classical
-          <input type="radio" name="genre" value=""> Jazz
-          <input type="radio" name="genre" value=""> Hip Hop
-        </fieldset>
+            <fieldset>
+              <label for="genre">Genre:</label>
+              <input type="radio" name="genre" value=""> Rock
+              <input type="radio" name="genre" value=""> Pop
+              <input type="radio" name="genre" value=""> Blues
 
-        <button type="button" name="button">Filter</button>
+              <input type="radio" name="genre" value=""> Classical
+              <input type="radio" name="genre" value=""> Jazz
+              <input type="radio" name="genre" value=""> Hip Hop
+            </fieldset>
 
-      </form>
+            <button type="button" name="button">Filter</button>
 
-    </div>
-    <div id="songInfo" class="songInfo">
+          </form>
+
+        </div>
+        <div id="songInfo" class="songInfo">
 
 
-    </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="add-view" class="hidden">
+      <div id="addMusicBody">
+
+        <div class="addSong">
+
+          <div class="songInput">
+            Song Title: <input id="songTitleInput" class="addMusicInput" type="text" name="" value="">
+          </div>
+          <div class="songInput">
+            Artist: <input id="artistInput" class="addMusicInput" type="text" name="" value="">
+          </div>
+          <div class="songInput">
+            Album: <input id="albumInput" class="addMusicInput" type="text" name="" value="">
+          </div>
+
+          <button id="addButton" type="button" name="button">Add</button>
+
+        </div>
+      </div>
+    </section>
 
     <script type="text/javascript" src="main.js"></script>
   </body>

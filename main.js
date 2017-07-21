@@ -21,8 +21,44 @@ for (let i = 0; i < songs.length; i++) {
 	goodSongs.push(newSongs)
 }
 
-console.log(goodSongs);
 
 for (var j = 0; j < goodSongs.length; j++) {
   document.getElementById("songInfo").innerHTML += `<p class="song">${goodSongs[j]}</p>`;
 }
+
+// Music History Part 3 with Views and adding songs to the list
+
+let indexLink = document.getElementById("link-home");
+let addLink = document.getElementById("link-add");
+let homeSection = document.getElementById("home-view");
+let addSection = document.getElementById("add-view");
+
+indexLink.addEventListener("click", function(e) {
+  homeSection.classList.remove("hidden");
+	homeSection.classList.add("visible");
+
+	addSection.classList.remove("visible");
+	addSection.classList.add("hidden");
+})
+
+addLink.addEventListener("click", function(e) {
+	homeSection.classList.remove("visible");
+	homeSection.classList.add("hidden");
+
+	addSection.classList.remove("hidden");
+  addSection.classList.add("visible");
+})
+
+let songTitle = document.getElementById("songTitleInput");
+let artist = document.getElementById("artistInput");
+let albumTitle = document.getElementById("albumInput");
+let addButton = document.getElementById("addButton");
+
+let addSongToGoodSongs = (e) => {
+	let userNewSong = songTitle.value + " - by " + artist.value + " on the album " + albumTitle.value;
+	goodSongs.push(userNewSong);
+	console.log(goodSongs);
+	document.getElementById("songInfo").innerHTML += `<p class="song">${goodSongs[goodSongs.length - 1]}</p>`;
+}
+
+addButton.addEventListener("click", addSongToGoodSongs)
