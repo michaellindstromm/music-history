@@ -45,6 +45,7 @@ Dark yellow = #785616*/
   display: flex;
   border: 2px solid black;
   background: #4DD7FA;
+  max-height: 416px;
 }
 
 .songInfo {
@@ -205,4 +206,42 @@ form div {
 
 #songInfo {
   display: flex;
+  max-height: 416px;
+  overflow: auto;
+}
+
+.thisSong {
+  display: flex;
+  flex-wrap: wrap;
+  /*border-top: 1px solid black;*/
+  padding-left: 2em;
+  min-height: 58px;
+  align-items: center;
+}
+
+.thisSong h3 {
+  width: 100%;
+  margin: 0 auto;
+  color: #785616;
+}
+
+.thisSong h6 {
+  width: 200px;
+  margin: 0;
+}
+
+.thisSong h6 span {
+  color: #785616;
+}
+
+#thisSongAlbum {
+  margin-right: 0;
+}
+
+.deleteButton {
+  width: 80px;
+}
+
+#moreLink {
+  text-align: center;
 }
