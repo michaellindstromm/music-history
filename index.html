@@ -22,12 +22,12 @@
       <div id="indexBody">
         <div class="songSelection"> <!-- Song Criteria -->
           <form class="" action="index.html" method="post">
-            <fieldset>
+            <div>
               <label for="songLength">Song Length:</label> <br>
               <input type="range" name="songLength" value="50"> <br>
-            </fieldset>
+            </div>
 
-            <fieldset>
+            <div>
               <label for="artist">Artist:</label> <br>
               <select class="artistOptions" name="artist"> <br>
                 <option selected disabled>Options</option> <br>
@@ -37,20 +37,30 @@
               <select class="albumOptions" name="album"> <br>
                 <option selected disabled>Options</option> <br>
               </select> <br>
-            </fieldset>
+            </div>
 
-            <fieldset>
-              <label for="genre">Genre:</label>
+
+            <label id="genreLabel" for="genre">Genre:</label>
+            <div id="genre1">
+
+
               <input type="radio" name="genre" value=""> Rock
               <input type="radio" name="genre" value=""> Pop
               <input type="radio" name="genre" value=""> Blues
+            </div>
+
+            <div id="genre2">
 
               <input type="radio" name="genre" value=""> Classical
               <input type="radio" name="genre" value=""> Jazz
               <input type="radio" name="genre" value=""> Hip Hop
-            </fieldset>
 
-            <button type="button" name="button">Filter</button>
+            </div>
+            <div id="filter">
+              <button type="button" name="button">Filter</button>
+            </div>
+
+
 
           </form>
 
@@ -84,6 +94,7 @@
       </div>
     </section>
 
+    <script type="text/javascript" src="songsxhr.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

@@ -82,17 +82,35 @@ nav ul li a:visited {
 
 form {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
 }
 
-form fieldset {
+form div {
   display: flex;
-  justify-content: flex-end;
-  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   margin-top: 1em;
   /*border: none;*/
+}
+#genreLabel {
+  width: 100%;
+  text-align: center;
+}
+
+#genre1 {
+  width: 50%;
+}
+
+#genre2 {
+  width: 50%;
+}
+
+#filter {
+  margin: 0 auto;
+  width: 100%;
 }
 
 /*input[type=range] {*/
@@ -161,6 +179,10 @@ form fieldset {
   margin-left: 1em auto;
 }
 
+.addSong:first-child {
+  padding-top: 1em;
+}
+
 .addMusicInput {
   width: 20%;
   margin-left: 1em;
@@ -168,7 +190,19 @@ form fieldset {
 
 .songInput {
   display: flex;
-  justify-content: center;
-  width: 400px;
-  padding: 1em;
+  justify-content: flex-end;
+  width: 40%;
+  padding: 1em 0;
+  margin: 0 auto;
+}
+
+#songTitleInput,
+#artistInput,
+#albumInput {
+  width: 150px;
+  margin-right: 12em;
+}
+
+#songInfo {
+  display: flex;
 }
