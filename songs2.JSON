@@ -1,0 +1,19 @@
+{
+  "songs":[
+    {
+    "title":"Ironic",
+    "artist":"Alanis Morisette",
+    "album":"Jagged Little Pill"
+    },
+    {
+      "title":"Johnny B. Goode",
+      "artist":"Chuck Berry",
+      "album":"Johnny B. Goode"
+    },
+    {
+      "title":"The Real Slim Shady",
+      "artist":"Eminem",
+      "album":"The Marshall Mathers LP"
+    }
+  ]
+}
