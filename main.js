@@ -1,30 +1,4 @@
-let songs = [];
-let goodSongs = [];
-
-songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
-
-songs.unshift("Johnny B. Goode - by Chuck Berry on the album Johnny B. Goode")
-songs.push("The Real Slim Shady - by Eminem on the album The Marshall Mathers LP")
-
-for (let i = 0; i < songs.length; i++) {
-	let newSongs = songs[i];
-  newSongs = newSongs.replace(/\*/g, "");
-	newSongs = newSongs.replace(/\@/g, "");
-	newSongs = newSongs.replace(/\(/g, "");
-	newSongs = newSongs.replace(/\!/g, "");
-	newSongs = newSongs.replace(/\>/g, "-");
-
-	goodSongs.push(newSongs)
-}
-
-
-for (var j = 0; j < goodSongs.length; j++) {
-  document.getElementById("songInfo").innerHTML += `<p class="song">${goodSongs[j]}</p>`;
-}
+// Appending songs to DOM used to be here, but now version 4 is going to do this through a JSON file.
 
 // Music History Part 3 with Views and adding songs to the list
 
@@ -49,16 +23,54 @@ addLink.addEventListener("click", function(e) {
   addSection.classList.add("visible");
 })
 
-let songTitle = document.getElementById("songTitleInput");
-let artist = document.getElementById("artistInput");
-let albumTitle = document.getElementById("albumInput");
-let addButton = document.getElementById("addButton");
+// The ability to add songs used to be here, but now this will also be done through JSON file
+function getSongs(songs) {
+	let songS = songs.songs; //function takes JSON object and loops through for loop and puts data into appropriate arrays
+	let songTitlesArr = [];
+	let albumTitlesArr = [];
+	let artistNamesArr = [];
+	for (var i = 0; i < songS.length; i++) {
+		let thisSong = songS[i];
+		songTitlesArr.push(thisSong.title);
 
-let addSongToGoodSongs = (e) => {
-	let userNewSong = songTitle.value + " - by " + artist.value + " on the album " + albumTitle.value;
-	goodSongs.push(userNewSong);
-	console.log(goodSongs);
-	document.getElementById("songInfo").innerHTML += `<p class="song">${goodSongs[goodSongs.length - 1]}</p>`;
+		albumTitlesArr.push(thisSong.album);
+
+		artistNamesArr.push(thisSong.artist);
+	}
+
+	//***************************************
+	//***************************************
+
+	let postArea = document.getElementById("songInfo");
+	let titleHeading;
+	let artistHeading;
+	let albumHeading;
+	for (var i = 0; i < songS.length; i++) {
+
+		//Create heading with song Titles
+
+		let h3Title = document.createElement("h3");
+		titleHeading = songTitlesArr[i];
+		console.log(titleHeading);
+		h3Title.innerHTML = titleHeading;
+		postArea.appendChild(h3Title);
+
+		//Create heading with artist
+
+		let h6Artist = document.createElement("h6");
+		artistHeading = albumTitlesArr[i];
+		console.log(artistHeading);
+		h6Artist.innerHTML = artistHeading;
+		postArea.appendChild(h6Artist);
+
+		//Create heading with album
+
+		let h6Album = document.createElement("h6");
+		albumHeading = albumTitlesArr[i];
+		console.log(albumHeading);
+		h6Album.innerHTML = albumHeading;
+		postArea.appendChild(h6Album);
+	}
+
 }
-
-addButton.addEventListener("click", addSongToGoodSongs)
+Songs.loadSongs(getSongs);
